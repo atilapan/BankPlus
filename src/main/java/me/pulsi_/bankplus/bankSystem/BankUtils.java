@@ -515,7 +515,7 @@ public class BankUtils {
         }
 
         if (isRemovingRequiredItems(bank, nextLevel) && canRemoveSafely)
-            for (Bank.RequiredItem requiredItem : requiredItems) p.getInventory().removeItem(requiredItem.item);
+            for (Bank.RequiredItem requiredItem : requiredItems) p.getInventory().removeItem(new ItemStack(requiredItem.item.getType(), requiredItem.amount));
 
         setLevel(bank, p, nextLevel);
         BPMessages.sendIdentifier(p, "Bank-Upgraded");

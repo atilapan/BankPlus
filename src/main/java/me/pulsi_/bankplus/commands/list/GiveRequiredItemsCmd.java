@@ -110,7 +110,7 @@ public class GiveRequiredItemsCmd extends BPCommand {
         return new BPCmdExecution() {
             @Override
             public void execute() {
-                for (Bank.RequiredItem requiredItem : givenItems) target.getInventory().addItem(requiredItem.item);
+                for (Bank.RequiredItem requiredItem : givenItems) target.getInventory().addItem(new ItemStack(requiredItem.item.getType(), requiredItem.amount));
             }
         };
     }
